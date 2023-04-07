@@ -2,3 +2,44 @@
     background-color: #f4511e; /* Orange */
     color: #ffffff;
 }
+
+h1{
+    margin-bottom: 80px;
+}
+
+.btn{
+    height: 60px;
+    width: 150px;
+    margin: 0 50px 60px;
+}
+
+.alpha {
+    height: 20px;
+    width: 80px;
+}
+
+.tesla {
+    height: 20px;
+    width: 20px;
+}
+
+.tesla1 {
+    height: 20px;
+    width: 80px;
+}
+
+.rnd{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+}
+
+.pre{
+    background-color: black;
+}
+
+.rnd1{
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
