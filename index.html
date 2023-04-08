@@ -21,8 +21,9 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Bootstrap js -->
+    <!-- js -->
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -32,10 +33,13 @@
     <div class="jumbotron text-center">
         <h1>Stock Company</h1>
         <button type="button" class="btn btn-lg btn-default"><i class="fa-brands fa-apple"></i> Apple Inc.</button>
-        <button type="button" class="btn btn-lg btn-default"><img class="alpha" src="Microsoft_logo_(2012).png" alt=""></button>
-        <button type="button" class="btn btn-lg btn-default"><img class="alpha" src="Alphabet_Inc_logo__1_-removebg-preview.png" alt=""></button>
+        <button type="button" class="btn btn-lg btn-default"><img class="alpha" src="Microsoft_logo_(2012).png"
+                alt=""></button>
+        <button type="button" class="btn btn-lg btn-default"><img class="alpha"
+                src="Alphabet_Inc_logo__1_-removebg-preview.png" alt=""></button>
         <button type="button" class="btn btn-lg btn-default"><img class="alpha" src="Amazon_logo.png" alt=""></button>
-        <button type="button" class="btn btn-lg btn-default"><img class="tesla" src="Tesla_Motors.png" alt="">  <img class="tesla1" src="Tesla_Motors1.png" alt=""></button>
+        <button type="button" class="btn btn-lg btn-default"><img class="tesla" src="Tesla_Motors.png" alt=""> <img
+                class="tesla1" src="Tesla_Motors1.png" alt=""></button>
         <form class="form-inline">
 
             <div class="form-inline">
@@ -49,21 +53,50 @@
                 <label for="dates" style="font-size: large;">Date: </label>
                 <input type="date" class="form-control">
             </div>
-            
+
             <button type="button" class="btn btn-lg pre">Predict</button>
         </form>
-                <b class="rnd1" style="font-size: 40px;">😑  </b>
-                <b class="rnd1" style="font-size: 40px;">😑  </b>
-                <b class="rnd1" style="font-size: 40px;">😑  </b>
-                <b class="rnd1" style="font-size: 40px;">😑  </b>
-                <b class="rnd1" style="font-size: 40px;">😑  </b>
-                <b class="rnd1" style="font-size: 40px;">😑  </b>
-                <b class="rnd1" style="font-size: 40px;">😑  </b>
-                <b class="rnd1" style="font-size: 40px;">😑  </b>
-                <b class="rnd1" style="font-size: 40px;">😑  </b>
-                <b class="rnd1" style="font-size: 40px;">😑</b>
-            </div>
+        <b class="rnd1" style="font-size: 40px;">😑 </b>
+        <b class="rnd1" style="font-size: 40px;">😑 </b>
+        <b class="rnd1" style="font-size: 40px;">😑 </b>
+        <b class="rnd1" style="font-size: 40px;">😑 </b>
+        <b class="rnd1" style="font-size: 40px;">😑 </b>
+        <b class="rnd1" style="font-size: 40px;">😑 </b>
+        <b class="rnd1" style="font-size: 40px;">😑 </b>
+        <b class="rnd1" style="font-size: 40px;">😑 </b>
+        <b class="rnd1" style="font-size: 40px;">😑 </b>
+        <b class="rnd1" style="font-size: 40px;">😑</b>
+
+        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+    <script>
+        const xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+        const yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+        new Chart("myChart", {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    fill: true,
+                    lineTension: 0,
+                    backgroundColor: "rgba(0,0,255,1.0)",
+                    borderColor: "rgba(0,0,255,0.1)",
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                scales: {
+                    xAxes: [{gridLines: {color: "rgba(0, 0, 0, 0)"} }],
+                    yAxes: [{ ticks: { min: 6, max: 16 } }],
+                }
+            }
+        });
+    </script>
     </div>
+
+    
+
 </body>
 
 </html>
