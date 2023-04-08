@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sss</title>
+    <title>Stocker</title>
 
     <!-- Bootstrap -->
 
@@ -13,7 +13,8 @@
 
     <!-- CSS -->
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+
 
     <!-- Font Awsome -->
 
@@ -35,29 +36,33 @@
             <h1>Stock Company</h1>
         </div>
         <form class="form-inline">
-            <button type="button" class="btn btn-lg btn-default"><i class="fa-brands fa-apple"></i> Apple Inc.</button>
-            <button type="button" class="btn btn-lg btn-default"><img class="alpha" src="Microsoft_logo_(2012).png"
-                    alt=""></button>
-            <button type="button" class="btn btn-lg btn-default"><img class="alpha"
-                    src="Alphabet_Inc_logo__1_-removebg-preview.png" alt=""></button>
-            <button type="button" class="btn btn-lg btn-default"><img class="alpha" src="Amazon_logo.png"
-                    alt=""></button>
-            <button type="button" class="btn btn-lg btn-default"><img class="tesla" src="Tesla_Motors.png" alt=""> <img
-                    class="tesla1" src="Tesla_Motors1.png" alt=""></button>
+                <button name="apple" type="button" class="btn btn-lg btn-default stock-button" id="apple"><i
+                        class="fa-brands fa-apple"></i> Apple Inc.</button>
+                <button name="MS" type="button" class="btn btn-lg btn-default stock-button" id="microsoft"><img class="alpha"
+                        src="../static/images/Microsoft_logo_(2012).png" alt=""></button>
+                <button name="Alpha" type="button" class="btn btn-lg btn-default stock-button" id="alphabet"><img class="alpha"
+                        src="../static/images/Alphabet_Inc_logo__1_-removebg-preview.png" alt=""></button>
+                <button name="amazon" type="button" class="btn btn-lg btn-default stock-button" id="amazon"><img class="alpha"
+                        src="../static/images/Amazon_logo.png" alt=""></button>
+                <button name="tesla" type="button" class="btn btn-lg btn-default stock-button" id="tesla"><img class="tesla"
+                        src="../static/images/Tesla_Motors.png" alt=""> <img class="tesla1" src="../static/images/Tesla_Motors1.png"
+                        alt=""></button>
 
-                <!-- <button type="button" class="btn rnd btn-warning">Today</button>
+            <!-- <button type="button" class="btn rnd btn-warning">Today</button>
                 <button type="button" class="btn rnd btn-warning">Yesterday</button>
                 <button type="button" class="btn rnd btn-warning">2 days back</button>
                 <button type="button" class="btn rnd btn-warning">3 days back</button>
                 <button type="button" class="btn rnd btn-warning">4 days back</button>
                 <button type="button" class="btn rnd btn-warning">5 days back</button>
                 <button type="button" class="btn rnd btn-warning">6 days back</button> -->
-                <div class="b1">
-                    <p><a href="index2.html">Analyse any tweet</a></p>
-                    <p>OR</p>
-                    <p>Choose the date for stock prediction and sentiment analysis</p><br>
-                <input type="date" class="form-control" min="2015-01-01" max="2020-12-31"><br>
-                <button type="button" class="btn btn-lg pre">Predict</button>
+            <div class="b1">
+                <p><a href="/sentiment">Analyse any tweet</a></p>
+                <p>OR</p>
+                <p>Choose the date for stock prediction and sentiment analysis</p><br>
+                <input type="date" class="form-control" id="date" name="Date" min="2015-01-01" max="2020-12-31" value="2015-09-17">
+                <br>
+                <button type="button" class="btn btn-lg pre " id="submitBtn">Predict <span id="loadingIcon"
+                class="loading"></span></button>
             </div>
         </form>
         <b class="rnd1" style="font-size: 40px;">😢 </b>
@@ -99,11 +104,12 @@
                 options: {
                     legend: { display: false },
                     scales: {
-                        yAxes: [{ticks: { min: 6, max: 16 } }],
+                        yAxes: [{ ticks: { min: 6, max: 16 } }],
                     }
                 }
             });
         </script>
+        <script src="../static/js/script.js"></script>
     </div>
     <footer id="footer">
         <i class="fa-brands fa-twitter foot"></i>

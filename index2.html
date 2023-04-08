@@ -13,7 +13,8 @@
 
     <!-- CSS -->
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+
 
     <!-- Font Awsome -->
 
@@ -32,7 +33,9 @@
 <body>
     <div class="jumbotron text-center">
         <div class="box">
-            <a style="color: #fff;" href="index.html"><h1>Stock Company</h1></a>
+            <a style="color: #fff;" href="/">
+                <h1>Stock Company</h1>
+            </a>
         </div>
 
         <form>
@@ -40,7 +43,9 @@
                 <textarea class="z-depth-1 form-control" id="exampleFormControlTextarea6" rows="3"
                     placeholder="Enter the tweet..."></textarea>
             </div>
-            <button type="button" class="btn btn-lg pre di">Predict</button>
+            <button type="button" class="btn btn-lg pre di"  id="sentiBtn">Predict
+                <span id="loadingIcon" class="loading"></span>
+            </button>
         </form>
         <b class="rnd1" style="font-size: 40px;">😢 </b>
         <b class="rnd1" style="font-size: 40px;">😞 </b>
@@ -59,6 +64,42 @@
         <i class="fa-brands fa-facebook foot"></i>
         <i class="fa-solid fa-envelope foot"></i>
         <p>© We give up</p>
+            <script>
+                let loading = false;
+                const sentiArea = document.getElementById("exampleFormControlTextarea6");
+                const sentiBtn = document.getElementById("sentiBtn");
+                sentiBtn.addEventListener("click", function () {
+                    senti = sentiArea.value;
+                    const data = {
+                        senti: senti,
+                    };
+                    sentiPredict(data);
+                });
+                function sentiPredict(data) {
+                    if (loading) return;
+                    loading = true;
+                    document.getElementById("loadingIcon").style.display = "inline-block";
+                    fetch("http://localhost:5000/senti", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(data),
+                    })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log("Response from server:", data);
+                            document.getElementById("loadingIcon").style.display = "none";
+                            loading = false;
+                        })
+                        .catch((error) => {
+                            console.error("Error:", error);
+                            document.getElementById("loadingIcon").style.display = "none";
+                            loading = false;
+                        });
+                }
+
+            </script>
     </footer>
 </body>
 
