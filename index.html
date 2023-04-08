@@ -77,7 +77,7 @@
             data: {
                 labels: xValues,
                 datasets: [{
-                    fill: true,
+                    fill: false,
                     lineTension: 0,
                     backgroundColor: "rgba(0,0,255,1.0)",
                     borderColor: "rgba(0,0,255,0.1)",
@@ -88,14 +88,12 @@
                 legend: { display: false },
                 scales: {
                     xAxes: [{gridLines: {color: "rgba(0, 0, 0, 0)"} }],
-                    yAxes: [{ ticks: { min: 6, max: 16 } }],
+                    yAxes: [{gridLines: {color: "rgba(0, 0, 0, 0)"}, ticks: { min: 6, max: 16 } }],
                 }
             }
         });
     </script>
-    </div>
 
-    
 
 </body>
 
