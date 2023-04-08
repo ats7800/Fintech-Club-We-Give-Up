@@ -23,7 +23,7 @@
 
     <!-- js -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.2/dist/chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -45,19 +45,20 @@
             <button type="button" class="btn btn-lg btn-default"><img class="tesla" src="Tesla_Motors.png" alt=""> <img
                     class="tesla1" src="Tesla_Motors1.png" alt=""></button>
 
-            <div class="form-inline">
-                <!--<button type="button" class="btn rnd btn-warning">Today</button>
+                <!-- <button type="button" class="btn rnd btn-warning">Today</button>
                 <button type="button" class="btn rnd btn-warning">Yesterday</button>
                 <button type="button" class="btn rnd btn-warning">2 days back</button>
                 <button type="button" class="btn rnd btn-warning">3 days back</button>
                 <button type="button" class="btn rnd btn-warning">4 days back</button>
                 <button type="button" class="btn rnd btn-warning">5 days back</button>
                 <button type="button" class="btn rnd btn-warning">6 days back</button> -->
-                <label for="dates" style="font-size: large;">Date: </label>
-                <input type="date" class="form-control">
+                <div class="b1">
+                    <p><a href="index2.html">Analyse any tweet</a></p>
+                    <p>OR</p>
+                    <p>Choose the date for stock prediction and sentiment analysis</p><br>
+                <input type="date" class="form-control" min="2015-01-01" max="2020-12-31"><br>
+                <button type="button" class="btn btn-lg pre">Predict</button>
             </div>
-
-            <button type="button" class="btn btn-lg pre">Predict</button>
         </form>
         <b class="rnd1" style="font-size: 40px;">😢 </b>
         <b class="rnd1" style="font-size: 40px;">😞 </b>
@@ -75,29 +76,38 @@
             const xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
             const yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
 
+            var ctx = document.getElementById('myChart').getContext('2d');
+
+            var gradient = ctx.createLinearGradient(0, 0, 0, 300);
+            gradient.addColorStop(0, '#E4E9FD');
+            gradient.addColorStop(1, 'rgba(100, 100, 0,0)');
+
             new Chart("myChart", {
                 type: "line",
                 data: {
                     labels: xValues,
                     datasets: [{
-                        fill: false,
+                        fill: true,
                         lineTension: 0,
-                        backgroundColor: "rgba(0,0,255,1.0)",
-                        borderColor: "rgba(0,0,255,0.1)",
+                        backgroundColor: gradient,
+                        borderColor: "#E4E9FD",
                         data: yValues
                     }]
                 },
                 options: {
-                    legend: { display: false },
+                    legend: { display: true },
                     scales: {
-                        xAxes: [{ gridLines: { color: "rgba(0, 0, 0, 0)" } }],
-                        yAxes: [{ gridLines: { color: "rgba(0, 0, 0, 0)" }, ticks: { min: 6, max: 16 } }],
+                        yAxes: [{ticks: { min: 6, max: 16 } }],
                     }
                 }
             });
         </script>
     </div>
     <footer id="footer">
+        <i class="fa-brands fa-twitter foot"></i>
+        <i class="fa-brands fa-instagram foot"></i>
+        <i class="fa-brands fa-facebook foot"></i>
+        <i class="fa-solid fa-envelope foot"></i>
         <p>© We give up</p>
     </footer>
 </body>

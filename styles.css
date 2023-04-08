@@ -17,6 +17,16 @@
     box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
+.b1{
+    max-width: 600px;
+    padding: 60px;
+    margin: 10px auto 80px;
+    background-color: #A683E3 rgba(0, 0, 0, 0.6);
+    color: grey;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
 h1{
     margin: 0 20px;
 }
@@ -62,7 +72,7 @@ h1{
 }
 
 .pre{
-    margin-top: 50px;
+    margin: 40px auto 0;
     background-color: black;
     color: white;
 }
@@ -86,4 +96,8 @@ h1{
 
 #footer {
     text-align: center;
+}
+
+.foot {
+    padding: 0 0.5% 1%;
 }
