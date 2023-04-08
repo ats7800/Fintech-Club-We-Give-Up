@@ -8,12 +8,12 @@ You are an analyst at a HFT named ABC Capital and you have observed that nowaday
 
 Dataset (Use for plotting the prices) - https://drive.google.com/file/d/1Mf_SJlZVHWIokY5YD0DjaMAIr3sVNQUb/view?usp=sharing
 
-**____Deliverables- 
+**_Deliverables- 
 
 Create a model for sentiment analysis
 Provide a user friendly frontend (Input- Stock symbol, Output- sentiment score out of 10)
 
-****Brownie points- 
+**_Brownie points- 
 
 Check your model’s accuracy by backtesting your prediction
 Compare your model’s past performance with actual stock prices movement
