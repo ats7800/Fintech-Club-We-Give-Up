@@ -1,12 +1,37 @@
 .jumbotron {
+    margin-top: 0;
+    padding-top: 10px;
     background-color: #E4E9FD;
-    background-image: -webkit-linear-gradient(65deg, #A683E3 50%, #E4E9FD 50%);
+    background-image: -webkit-linear-gradient(65deg, #ae8fe3 50%, #E4E9FD 50%);
     min-height: 1000px;
     font-family: 'helvetica neue';
 }
 
+.box {
+    max-width: 600px;
+    padding: 10px;
+    margin: 10px auto 80px;
+    background: #A683E3;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
 h1{
-    margin-bottom: 80px;
+    margin: 0 20px;
+}
+
+#exampleFormControlTextarea6{
+    margin: auto;
+    width: 450px;
+    height: 280px;
+}
+
+.head{
+    padding: 40px;
+    margin: 0 auto 20px;
+    background-color: #a079e5;
+    color: #E4E9FD;
 }
 
 .btn{
@@ -57,4 +82,8 @@ h1{
 
 #myChart {
     margin: 60px auto;
+}
+
+#footer {
+    text-align: center;
 }
