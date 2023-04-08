@@ -1,6 +1,6 @@
 # Fintech-Club-We-Give-Up
 
-Problem Statement
+**Problem Statement
 
 Skills - NLP, UI/UX, WebD
 
@@ -8,11 +8,13 @@ You are an analyst at a HFT named ABC Capital and you have observed that nowaday
 
 Dataset (Use for plotting the prices) - https://drive.google.com/file/d/1Mf_SJlZVHWIokY5YD0DjaMAIr3sVNQUb/view?usp=sharing
 
-Deliverables-
+**____Deliverables- 
+
 Create a model for sentiment analysis
 Provide a user friendly frontend (Input- Stock symbol, Output- sentiment score out of 10)
 
-Brownie points- 
+****Brownie points- 
+
 Check your model’s accuracy by backtesting your prediction
 Compare your model’s past performance with actual stock prices movement
 Additional input such as time frame can added.
@@ -26,9 +28,9 @@ We will take 5 stocks (Out of  and compare your model’s accuracy with our pred
 30% ML code 
 
 
-Approach towards solving the problem:
+**Approach towards solving the problem:
 
-In this problem we first thought to access the twitter's data using twitter developer id on which we could train our model for sentiment analysis. Twitter used to provide data for tweets of past 7 days. Unfortunately due the last month's policy changes in twitter the developers would no longer be getting access of data for free. Now developers need to pay 100 USD for the same. So we had to change our approach.
+In this problem we first thought to access the twitter's data using twitter developer id on which we could train our model for sentiment analysis. Twitter used to provide data for tweets of past 7 days. Unfortunately due the last month's policy changes in twitter the developers would no longer be getting access of data for free. Now developers need to pay 100 USD for the same. So we had to change our approach.**
 
 Since we did not have the recent data of twitter so we started looking for the older ones. Luckily we got one consisting of tweets related to 5 companies starting from 2015 to 2020. We did the data preprocessing then we moved on to the sentiment analaysis. We successfully did sentiment analysis on that data. Further we trained a regression model using sentiment score of tweets and their metadata like no of retweets, comments, likes, etc. We used that regression model to predict the changes in stock market. Or see the influence of tweets on stock market. 
 
