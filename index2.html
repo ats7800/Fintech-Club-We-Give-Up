@@ -47,16 +47,16 @@
                 <span id="loadingIcon" class="loading"></span>
             </button>
         </form>
-        <b class="rnd1" style="font-size: 40px;">😢 </b>
-        <b class="rnd1" style="font-size: 40px;">😞 </b>
-        <b class="rnd1" style="font-size: 40px;">😕 </b>
-        <b class="rnd1" style="font-size: 40px;">😐 </b>
-        <b class="rnd1" style="font-size: 40px;">🙂 </b>
-        <b class="rnd1" style="font-size: 40px;">😊 </b>
-        <b class="rnd1" style="font-size: 40px;">😃 </b>
-        <b class="rnd1" style="font-size: 40px;">😄 </b>
-        <b class="rnd1" style="font-size: 40px;">😁 </b>
-        <b class="rnd1" style="font-size: 40px;">😍</b>
+        <b class="rnd2" style="font-size: 40px;">😢 </b>
+        <b class="rnd2" style="font-size: 40px;">😞 </b>
+        <b class="rnd2" style="font-size: 40px;">😕 </b>
+        <b class="rnd2" style="font-size: 40px;">😐 </b>
+        <b class="rnd2" style="font-size: 40px;">🙂 </b>
+        <b class="rnd2" style="font-size: 40px;">😊 </b>
+        <b class="rnd2" style="font-size: 40px;">😃 </b>
+        <b class="rnd2" style="font-size: 40px;">😄 </b>
+        <b class="rnd2" style="font-size: 40px;">😁 </b>
+        <b class="rnd2" style="font-size: 40px;">😍</b>
     </div>
     <footer id="footer">
         <i class="fa-brands fa-twitter foot"></i>
@@ -79,7 +79,7 @@
                     if (loading) return;
                     loading = true;
                     document.getElementById("loadingIcon").style.display = "inline-block";
-                    fetch("http://localhost:5000/senti", {
+                    fetch("http://localhost:5000/sentiPredict", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
@@ -88,7 +88,15 @@
                     })
                         .then((response) => response.json())
                         .then((data) => {
+                            const emos = document.getElementsByClassName("rnd2")
                             console.log("Response from server:", data);
+                            score = parseInt(data['stock score'])
+                            console.log(emos);
+                            for (i in emos) {
+                                if(emos[i].classList)
+                                emos[i].classList.remove("showScore");
+                            }
+                            emos[score].classList.add("showScore");
                             document.getElementById("loadingIcon").style.display = "none";
                             loading = false;
                         })

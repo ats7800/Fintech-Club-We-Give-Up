@@ -36,15 +36,15 @@
             <h1>Stock Company</h1>
         </div>
         <form class="form-inline">
-                <button name="apple" type="button" class="btn btn-lg btn-default stock-button" id="apple"><i
+                <button name="AAPL" type="button" class="btn btn-lg btn-default stock-button" id="apple"><i
                         class="fa-brands fa-apple"></i> Apple Inc.</button>
-                <button name="MS" type="button" class="btn btn-lg btn-default stock-button" id="microsoft"><img class="alpha"
+                <button name="MSFT" type="button" class="btn btn-lg btn-default stock-button" id="microsoft"><img class="alpha"
                         src="../static/images/Microsoft_logo_(2012).png" alt=""></button>
-                <button name="Alpha" type="button" class="btn btn-lg btn-default stock-button" id="alphabet"><img class="alpha"
+                <button name="GOOG" type="button" class="btn btn-lg btn-default stock-button" id="alphabet"><img class="alpha"
                         src="../static/images/Alphabet_Inc_logo__1_-removebg-preview.png" alt=""></button>
-                <button name="amazon" type="button" class="btn btn-lg btn-default stock-button" id="amazon"><img class="alpha"
+                <button name="AMZN" type="button" class="btn btn-lg btn-default stock-button" id="amazon"><img class="alpha"
                         src="../static/images/Amazon_logo.png" alt=""></button>
-                <button name="tesla" type="button" class="btn btn-lg btn-default stock-button" id="tesla"><img class="tesla"
+                <button name="TSLA" type="button" class="btn btn-lg btn-default stock-button" id="tesla"><img class="tesla"
                         src="../static/images/Tesla_Motors.png" alt=""> <img class="tesla1" src="../static/images/Tesla_Motors1.png"
                         alt=""></button>
 
@@ -79,10 +79,13 @@
         <!-- <h3 style="color: #fff;">Predicted Stock Price = USD</h3> -->
 
         <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-        <script>
-            const xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
-            const yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+        <script src="../static/js/script.js"></script>
 
+        <script>
+            let xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+            let yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+            
             var ctx = document.getElementById('myChart').getContext('2d');
 
             var gradient = ctx.createLinearGradient(0, 0, 0, 300);
@@ -109,7 +112,6 @@
                 }
             });
         </script>
-        <script src="../static/js/script.js"></script>
     </div>
     <footer id="footer">
         <i class="fa-brands fa-twitter foot"></i>
