@@ -45,6 +45,11 @@ nlpFin = pipeline("sentiment-analysis", model=modelFin, tokenizer=tokenizer)
 
 # Loading the massive dataset of twitter tweet history about stock companies
 mergedFile = pd.read_csv("merged_file.csv")
+apple = pd.read_csv("AAPL.csv")
+apple['Date'] = pd.to_datetime(apple['Date'])
+
+# Convert date column to string format with "yyyy-mm-dd" format
+apple['Date'] = apple['Date'].dt.strftime('%Y-%m-%d')
 
 
 # initiating flask for hosting
@@ -140,7 +145,16 @@ def predict():
     pred = modelLSTM.predict(x_test)
     prediction = float(pred[0][0])
     print(prediction)
-    return jsonify({"stock score":(avgSenti+1)*5 , "Pred":prediction })
+
+    one_day_later = pd.to_datetime(target_date) + pd.DateOffset(days=1)
+    five_days_earlier = pd.to_datetime(target_date) - pd.DateOffset(days=5)
+    filtered_apple = apple[(apple['Date'] <= one_day_later.strftime('%Y-%m-%d')) & (apple['Date'] >= five_days_earlier.strftime('%Y-%m-%d'))]
+    high = float((filtered_apple.tail(1)['Close'].values[0]))
+    low = float((filtered_apple.head(1)['Open'].values[0]))
+    dell = (high - low)/low
+
+
+    return jsonify({"stock score":(avgSenti+1)*5 , "Pred":prediction, "Dell":dell })
 
         
 

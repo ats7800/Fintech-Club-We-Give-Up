@@ -1,5 +1,9 @@
 let selectedBtn = "Apple";
 let loading = false;
+const resDiv = document.getElementsByClassName("result-div")[0];
+
+let x = [1, 2, 3];
+let y = [2, 3, 4];
 
 const Chart = document.getElementById("myChart");
 // Chart.style.visibility = "hidden";
@@ -32,11 +36,20 @@ submitBtn.addEventListener("click", function () {
   console.log("One day later: ", oneDayLater);
   console.log("Five days earlier: ", fiveDaysEarlier);
 
-  //   fetch(`http://api.marketstack.com/v1/eod
-  //     ? access_key = b4c8f9e44087a3ee81d7cf8e06d08782
-  //     & symbols = AAPL
-  //     & date_from = ${fiveDaysEarlier}
-  //     & date_to = ${oneDayLater}`);
+  // for (let i = 6; i >= 0; i--) {
+  //   x.push(formatDate(currDate.setDate(currDate.getDate() - i)));
+  // }
+  // url = `https://api.tiingo.com/tiingo/daily/aapl/prices?startDate=${fiveDaysEarlier}&endDate=${oneDayLater}&token=01f8468c37842d5135d7041ebc540eb134470b32`;
+
+  // fetch(url)
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  //     console.log("Response from server:", data);
+  //     // data["date"];
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error:", error);
+  //   });
 
   // Chart.style.visibility = "visible";
 });
@@ -77,6 +90,8 @@ function postPredict(data) {
     .then((data) => {
       console.log("Response from server:", data);
       score = data["stock score"];
+      Dell = data["Dell"];
+      pred = data["Pred"];
       const emos = document.getElementsByClassName("rnd1");
       score = parseInt(score);
       for (i in emos) {
@@ -84,6 +99,14 @@ function postPredict(data) {
       }
       emos[score].classList.add("showScore");
       document.getElementById("loadingIcon").style.display = "none";
+      // resDiv.style.opacicty = '100'
+      resDiv.textContent = `The Predicted Stock change is of ${Number(
+        pred.toFixed(4)
+      )} While acutal stock change was of ${Number(Dell.toFixed(4))} 
+      The weighted average of Sentiments of tweets at the time is total up to ${Number(
+        score.toFixed(4)
+      )} out of 10
+      `;
       loading = false;
     })
     .catch((error) => {

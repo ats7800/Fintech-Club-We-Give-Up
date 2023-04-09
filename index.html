@@ -76,12 +76,14 @@
         <b class="rnd1" style="font-size: 40px;">😁 </b>
         <b class="rnd1" style="font-size: 40px;">😍</b>
         <br><br>
+
+        <div class="result-div">The Predicted Stock change is of 0.05 While acutal stock change was of 0.04</div>
         <!-- <h3 style="color: #fff;">Predicted Stock Price = USD</h3> -->
 
         <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
         <script src="../static/js/script.js"></script>
 
-        <script>
+        <!-- <script>
             let xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
             let yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
 
@@ -111,7 +113,69 @@
                     }
                 }
             });
-        </script>
+        </script> -->
+    <canvas id="myChart"></canvas>
+    <script>
+        var xValues = x;
+        var yValues = y;
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+
+        var gradient = ctx.createLinearGradient(0, 0, 0, 300);
+        gradient.addColorStop(0, '#E4E9FD');
+        gradient.addColorStop(1, 'rgba(100, 100, 0,0)');
+
+        new Chart("myChart", {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    fill: true,
+                    lineTension: 0,
+                    backgroundColor: gradient,
+                    borderColor: "#E4E9FD",
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                scales: {
+                    yAxes: [{ ticks: { min: 6, max: 16 } }],
+                }
+            }
+        });
+    </script>
+    <canvas id="myChart1"></canvas>
+    <script>
+        var xValues1 = x;
+        var yValues1 = y;
+
+        var ctx1 = document.getElementById('myChart1').getContext('2d');
+
+        var gradient1 = ctx1.createLinearGradient(0, 0, 0, 300);
+        gradient1.addColorStop(0, '#E4E9FD');
+        gradient1.addColorStop(1, 'rgba(100, 100, 0,0)');
+
+        new Chart("myChart1", {
+            type: "line",
+            data: {
+                labels: xValues1,
+                datasets: [{
+                    fill: true,
+                    lineTension: 0,
+                    backgroundColor: gradient,
+                    borderColor: "#E4E9FD",
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                scales: {
+                    yAxes: [{ ticks: { min: 6, max: 16 } }],
+                }
+            }
+        });
+    </script>
     </div>
     <footer id="footer">
         <i class="fa-brands fa-twitter foot"></i>
