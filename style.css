@@ -98,11 +98,23 @@ h1 {
 
 .rnd1 {
     filter: grayscale(100%);
+    display: inline;
+    
+}
+.rnd1.showScore {
+    filter: grayscale(0%);
+    
+}
+.rnd2 {
+    filter: grayscale(100%);
+    display: inline;
+    
+}
+.rnd2.showScore {
+    filter: grayscale(0%);
+    
 }
 
-.rnd1:hover {
-    filter: grayscale(0%);
-}
 
 #myChart {
     margin: 60px auto;
